@@ -53,18 +53,26 @@ export async function fetchNewData(previousData: Game[]) {
         }
     }
 
-    for (const game of results) {
-        if (!game.logo) {
-            const data = await fetch(`https://api.allorigins.win/get?url=https://www.igdb.com/search_autocomplete_all?q=${game.name}`);
-            if (data.ok) {
-                const json = await data.json();
-                const game_results = JSON.parse(json.contents);
-                game.logo = `https://images.igdb.com/igdb/image/upload/t_cover_big/${game_results.game_suggest[0].cloudinary}.png`;
-            }
-        }
-    }
-
     return results;
+}
+
+export async function fetchIcons(games: Game[]) {
+    const filtered = games.map((item, index) => ({ ...item, idx: index })).filter(({ logo }) => !logo);
+
+    const promises = filtered.map(game => {
+        return fetch(`https://api.allorigins.win/get?url=https://www.igdb.com/search_autocomplete_all?q=${game.name}`);
+    });
+
+    const resolved = await Promise.all(promises);
+    resolved.forEach(async (data, index) => {
+        if (data.ok) {
+            const json = await data.json();
+            const game_results = JSON.parse(json.contents);
+            games[filtered[index].idx].logo = `https://images.igdb.com/igdb/image/upload/t_cover_big/${game_results.game_suggest[0].cloudinary}.png`;
+        }
+    });
+
+    return games;
 }
 
 export function fetchChanges(previous: Game[], current: Game[]) {

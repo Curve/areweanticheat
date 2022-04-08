@@ -6,7 +6,7 @@ import ChangeItem from "./components/ChangeItem";
 import Legend from "./components/LegendInfo";
 import StyledAccordion from "./components/StyledAccordion";
 import TableItem from "./components/TableItem";
-import { fetchChanges, fetchNewData, getBreakdown, getGameStats } from "./Functions";
+import { fetchChanges, fetchIcons, fetchNewData, getBreakdown, getGameStats } from "./Functions";
 
 
 export default function Body() {
@@ -34,12 +34,18 @@ export default function Body() {
             const changes = fetchChanges(oldData, newData);
             setChanges(changes);
             setFinished(true);
-
-            if (changes.length == 0) {
-                localStorage.setItem("previousData", JSON.stringify(newData));
-            }
         }).catch(console.error);
     }, []);
+
+    useEffect(() => {
+        fetchIcons(games).then(withIcons => {
+            setGames(withIcons);
+
+            if (changes.length == 0) {
+                localStorage.setItem("previousData", JSON.stringify(withIcons));
+            }
+        }).catch(console.error);
+    }, [changes]);
 
     const acknowledge = () => {
         setChanges([]);
