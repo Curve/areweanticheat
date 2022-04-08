@@ -36,6 +36,8 @@ export default function TableItem({ name, logo, status, reference, anticheats }:
                 return getText("Running");
             case Status.denied:
                 return getText("Denied");
+            case Status.confirmed:
+                return getText("Confirmed");
             default:
                 return getText("Unknown");
         }
