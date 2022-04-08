@@ -29,7 +29,8 @@ export async function fetchNewData(previousData: Game[]) {
         results.push(game);
     });
 
-    for (const override of Overrides) {
+    for (const _override of Overrides) {
+        const override = _override as any;
         if (override.addition) {
             results.push(override as unknown as Game);
         }
