@@ -64,15 +64,15 @@ export async function fetchIcons(games: Game[]) {
     });
 
     const resolved = await Promise.all(promises);
-    resolved.forEach(async (data, index) => {
+    for (const [index, data] of resolved.entries()) {
         if (data.ok) {
             const json = await data.json();
             const game_results = JSON.parse(json.contents);
             games[filtered[index].idx].logo = `https://images.igdb.com/igdb/image/upload/t_cover_big/${game_results.game_suggest[0].cloudinary}.png`;
         }
-    });
+    }
 
-    return games;
+    return [...games]; //? Needed to trigger re-render
 }
 
 export function fetchChanges(previous: Game[], current: Game[]) {

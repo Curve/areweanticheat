@@ -38,14 +38,16 @@ export default function Body() {
     }, []);
 
     useEffect(() => {
-        fetchIcons(games).then(withIcons => {
-            setGames(withIcons);
+        if (finished) {
+            fetchIcons(games).then(withIcons => {
+                setGames(withIcons);
 
-            if (changes.length == 0) {
-                localStorage.setItem("previousData", JSON.stringify(withIcons));
-            }
-        }).catch(console.error);
-    }, [changes]);
+                if (changes.length == 0) {
+                    localStorage.setItem("previousData", JSON.stringify(withIcons));
+                }
+            }).catch(console.error);
+        }
+    }, [finished]);
 
     const acknowledge = () => {
         setChanges([]);
@@ -121,7 +123,7 @@ export default function Body() {
                         </tr>
                     </thead>
                     <tbody>
-                        {games.filter(element => element.name.includes(searchFilter)).map(element => <TableItem key={element.name} name={element.name} logo={element.logo} status={element.status} reference={element.reference} anticheats={element.anticheats} />
+                        {games.filter(element => element.name.toLowerCase().includes(searchFilter.toLowerCase())).map(element => <TableItem key={element.name} name={element.name} logo={element.logo} status={element.status} reference={element.reference} anticheats={element.anticheats} />
                         )}
                     </tbody>
                 </Table>
