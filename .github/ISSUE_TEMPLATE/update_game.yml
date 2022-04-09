@@ -24,8 +24,8 @@ body:
         - Denied
         - Broken
         - Running
+        - Planned
         - Supported
-        - Confirmed
   - type: input
     id: new-reference
     attributes:

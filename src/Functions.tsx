@@ -5,7 +5,7 @@ export function remapStatus(status: string) {
     if (status.includes("unconfirmed")) {
         return Status.broken;
     } else if (status.includes("confirmed")) {
-        return Status.confirmed;
+        return Status.planned;
     } else if (status.includes("denied")) {
         return Status.denied;
     } else if (status.includes("supported")) {
@@ -116,8 +116,8 @@ export function getGameStats(games: Game[]) {
             case Status.running:
                 stats.running++;
                 break;
-            case Status.confirmed:
-                stats.confirmed++;
+            case Status.planned:
+                stats.planned++;
                 break;
             case Status.supported:
                 stats.supported++;
@@ -150,8 +150,8 @@ export function getBreakdown(games: Game[]) {
                 case Status.running:
                     breakdown.get(anticheat)!.running++;
                     break;
-                case Status.confirmed:
-                    breakdown.get(anticheat)!.confirmed++;
+                case Status.planned:
+                    breakdown.get(anticheat)!.planned++;
                     break;
                 case Status.supported:
                     breakdown.get(anticheat)!.supported++;

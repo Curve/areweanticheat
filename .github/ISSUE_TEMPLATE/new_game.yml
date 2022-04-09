@@ -26,8 +26,8 @@ body:
         - Denied
         - Broken
         - Running
+        - Planned
         - Supported
-        - Confirmed
     validations:
       required: true
   - type: input

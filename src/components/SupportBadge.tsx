@@ -17,7 +17,7 @@ export default function SupportBadge({ status }: SupportBadgeProps) {
             return <ThemeIcon color="green" radius="xl"><Check size={18} /></ThemeIcon>
         case Status.running:
             return <ThemeIcon color="cyan" radius="xl"><ThumbUp size={18} /></ThemeIcon>
-        case Status.confirmed:
+        case Status.planned:
             return <ThemeIcon color="violet" radius="xl"><Clock size={18} /></ThemeIcon>
         default:
             return <ThemeIcon color="gray" radius="xl"><QuestionMark size={18} /></ThemeIcon>

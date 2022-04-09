@@ -3,8 +3,8 @@ export class GameStats {
     broken = 0;
     denied = 0;
     running = 0;
+    planned = 0;
     supported = 0;
-    confirmed = 0;
 };
 
 export enum Status {
@@ -12,7 +12,7 @@ export enum Status {
     denied,
     running,
     supported,
-    confirmed,
+    planned,
 }
 
 export class Breakdown extends GameStats {

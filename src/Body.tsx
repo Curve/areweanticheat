@@ -77,11 +77,11 @@ export default function Body() {
                 { value: (gameStats.broken / gameStats.total) * 100, color: 'orange' },
                 { value: (gameStats.running / gameStats.total) * 100, color: 'cyan' },
                 { value: (gameStats.supported / gameStats.total) * 100, color: 'green' },
-                { value: (gameStats.confirmed / gameStats.total) * 100, color: 'violet' },
+                { value: (gameStats.planned / gameStats.total) * 100, color: 'violet' },
             ] : []} />
         <Stack sx={{ marginLeft: 15 }}>
-            <Legend color={theme.colors.violet[6]} name={`Confirmed (${gameStats.confirmed})`} />
             <Legend color={theme.colors.green[6]} name={`Supported (${gameStats.supported})`} />
+            <Legend color={theme.colors.violet[6]} name={`Planned (${gameStats.planned})`} />
             <Legend color={theme.colors.cyan[6]} name={`Running (${gameStats.running})`} />
             <Legend color={theme.colors.orange[6]} name={`Broken (${gameStats.broken})`} />
             <Legend color={theme.colors.red[6]} name={`Denied (${gameStats.denied})`} />
@@ -120,7 +120,7 @@ export default function Body() {
                                 <Progress size="xl" sections={[
                                     { value: (element.supported / element.total) * 100, color: 'green', label: `${element.supported}` },
                                     { value: (element.running / element.total) * 100, color: 'cyan', label: `${element.running}` },
-                                    { value: (element.confirmed / element.total) * 100, color: 'violet', label: `${element.confirmed}` },
+                                    { value: (element.planned / element.total) * 100, color: 'violet', label: `${element.planned}` },
                                     { value: (element.broken / element.total) * 100, color: 'orange', label: `${element.broken}` },
                                     { value: (element.denied / element.total) * 100, color: 'red', label: `${element.denied}` },
                                 ]} />
