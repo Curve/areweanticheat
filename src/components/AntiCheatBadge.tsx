@@ -15,6 +15,10 @@ const logo_map = new Map<string, string>([
     ["vac", "vac.png"],
     ["xign", "xigncode3.png"],
     ["treyarch", "treyarch.png"],
+    ["arbiter", "arbiter.png"],
+    ["nprotect", "nprotect.png"],
+    ["ricochet", "ricochet.png"],
+    ["mail.ru", "mailru.png"],
 ]);
 
 export default function AntiCheatBadge({ anticheat }: AntiCheatBadgeProps) {
