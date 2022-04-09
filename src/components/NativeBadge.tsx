@@ -9,7 +9,7 @@ export default function NativeBadge({ native }: NativeBadgeProps) {
     if (native) {
         return <Tooltip withArrow label="Also runs native">
             <ThemeIcon color="green" radius="xl">
-                <Award />
+                <Award size={16} />
             </ThemeIcon>
         </Tooltip>
     }
