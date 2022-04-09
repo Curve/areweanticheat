@@ -51,7 +51,7 @@ export default function TableItem({ name, logo, status, reference, anticheats }:
             </Group>
         </td>
         <td>
-            <Group noWrap>
+            <Group>
                 <SupportBadge status={status} />
                 {reference ?
                     <ActionIcon component="a" target="_blank" href={reference} className={classes.mobileShow}>
