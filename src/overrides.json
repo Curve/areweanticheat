@@ -60,5 +60,11 @@
         "addition": false,
         "native": true,
         "name": "Garry's Mod"
+    },
+    {
+        "addition": false,
+        "status": 2,
+        "name": "Star Citizen",
+        "reference": "https://github.com/starcitizen-lug/information-howtos/wiki/Quick-Start-Guide"
     }
 ]
