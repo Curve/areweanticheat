@@ -3,5 +3,16 @@
         "addition": false,
         "status": 2,
         "name": "Genshin Impact"
+    },
+    {
+        "addition": false,
+        "status": 3,
+        "name": "League of Legends",
+        "reference": "https://dotesports.com/league-of-legends/news/riot-games-anti-cheat-lol-single-case-exception-players-linux-25056"
+    },
+    {
+        "addition": false,
+        "name": "PUBG: BATTLEGROUNDS",
+        "rename": "PlayerUnknown's Battlegrounds"
     }
 ]
