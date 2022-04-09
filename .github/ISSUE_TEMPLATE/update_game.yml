@@ -1,0 +1,40 @@
+name: Update Game
+description: Request changes for a game on the list
+title: "Update <Game Name>"
+
+body:
+  - type: input
+    id: game
+    attributes:
+      label: Game Title
+      placeholder: e.g. Team Fortress 2
+    validations:
+      required: true
+  - type: input
+    id: anti-cheat
+    attributes:
+      label: Anti-Cheat Software
+      placeholder: e.g. Easy Anti-Cheat
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: New Status
+      description: Did the anti-cheat status change?
+      options:
+        - Denied
+        - Broken
+        - Running
+        - Supported
+        - Confirmed
+    validations:
+      required: true
+  - type: input
+    id: reference
+    attributes:
+      label: Reference
+      description: A reputable link where the developers either confirmed or denied the chance of support happening. If non-applicable, just put N/A.
+      placeholder: e.g. https://www.theverge.com/2021/10/5/22709918/valve-steam-deck-supported-games-anti-cheat-proton-eac-battleye-epic
+    validations:
+      required: true
