@@ -100,7 +100,9 @@ export default function Body() {
                         <Accordion.Item label="Changes since you've last checked">
                             <Stack>
                                 <Group position="center">
-                                    {changes.map((change, index) => <ChangeItem key={index} changes={change} />)}
+                                    <Stack>
+                                        {changes.map((change, index) => <ChangeItem key={index} changes={change} />)}
+                                    </Stack>
                                 </Group>
                                 <Button color="green" onClick={acknowledge} leftIcon={<Check size={16} />}>Acknowledge</Button>
                             </Stack>
