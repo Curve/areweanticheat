@@ -16,9 +16,11 @@ const useStyle = createStyles((theme) => ({
 }));
 
 export default function Body() {
+    const { classes } = useStyle();
     const theme = useMantineTheme();
     const [games, setGames] = useState<Game[]>([]);
     const [finished, setFinished] = useState(false);
+    const [lastVisited, setLastVisited] = useState("");
     const [searchFilter, setSearchFilter] = useState("");
     const [breakdown, setBreakdown] = useState<Breakdown[]>([]);
     const [changes, setChanges] = useState<Array<Array<Game>>>([]);
@@ -30,8 +32,9 @@ export default function Body() {
 
     useEffect(() => {
         //TODO: Do all the heavy work in a web worker.
-
         const oldData = JSON.parse(localStorage.getItem("previousData") || "[]");
+        setLastVisited(localStorage.getItem("lastVisit") || "");
+
         fetchNewData(oldData).then(newData => {
             setGames(newData);
             setGameStats(getGameStats(newData));
@@ -45,6 +48,8 @@ export default function Body() {
 
     useEffect(() => {
         if (finished) {
+            localStorage.setItem("lastVisit", new Date().toLocaleDateString());
+
             fetchIcons(games).then(withIcons => {
                 setGames(withIcons);
 
@@ -82,6 +87,13 @@ export default function Body() {
             <Legend color={theme.colors.red[6]} name={`Denied (${gameStats.denied})`} />
         </Stack>
     </Group><Stack sx={{ marginTop: 20 }}>
+            <Group position="center">
+                {lastVisited ?
+                    <Badge color="gray">Last visited {lastVisited}</Badge>
+                    :
+                    undefined}
+
+            </Group>
             {changes.length > 0 ?
                 <Group position="center">
                     <StyledAccordion initialItem={0} className={classes.reactiveWidth} icon={<RefreshAlert size={16} />}>
