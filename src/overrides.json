@@ -52,6 +52,12 @@
     },
     {
         "addition": false,
+        "status": 3,
+        "name": "Deceit",
+        "reference": "https://www.protondb.com/app/466240#uwKYvCVD3f"
+    },
+    {
+        "addition": false,
         "native": true,
         "name": "Garry's Mod"
     }
