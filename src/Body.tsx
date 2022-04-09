@@ -8,6 +8,12 @@ import StyledAccordion from "./components/StyledAccordion";
 import TableItem from "./components/TableItem";
 import { fetchChanges, fetchIcons, fetchNewData, getBreakdown, getGameStats } from "./Functions";
 
+const useStyle = createStyles((theme) => ({
+    reactiveWidth: {
+        [theme.fn.smallerThan('sm')]: { width: "90%" },
+        [theme.fn.largerThan('sm')]: { width: "60%" },
+    },
+}));
 
 export default function Body() {
     const theme = useMantineTheme();
@@ -78,7 +84,7 @@ export default function Body() {
     </Group><Stack sx={{ marginTop: 20 }}>
             {changes.length > 0 ?
                 <Group position="center">
-                    <StyledAccordion initialItem={0} sx={{ width: "60%" }} icon={<RefreshAlert size={16} />}>
+                    <StyledAccordion initialItem={0} className={classes.reactiveWidth} icon={<RefreshAlert size={16} />}>
                         <Accordion.Item label="Changes since you've last checked">
                             <Stack>
                                 <Group position="center">
@@ -92,7 +98,7 @@ export default function Body() {
                 :
                 undefined}
             <Group position="center">
-                <StyledAccordion sx={{ width: "60%" }} icon={<ListDetails size={16} />}>
+                <StyledAccordion className={classes.reactiveWidth} icon={<ListDetails size={16} />}>
                     <Accordion.Item label="Breakdown">
                         {breakdown.map(element => {
                             return <Stack key={element.anticheat}>
