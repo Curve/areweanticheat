@@ -11,14 +11,12 @@ body:
     validations:
       required: true
   - type: input
-    id: anti-cheat
+    id: anti-cheat-changes
     attributes:
-      label: Anti-Cheat Software
+      label: Anti-Cheat Software Changes
       placeholder: e.g. Easy Anti-Cheat
-    validations:
-      required: true
   - type: dropdown
-    id: status
+    id: new-status
     attributes:
       label: New Status
       description: Did the anti-cheat status change?
@@ -28,13 +26,9 @@ body:
         - Running
         - Supported
         - Confirmed
-    validations:
-      required: true
   - type: input
-    id: reference
+    id: new-reference
     attributes:
       label: Reference
       description: A reputable link where the developers either confirmed or denied the chance of support happening. If non-applicable, just put N/A.
       placeholder: e.g. https://www.theverge.com/2021/10/5/22709918/valve-steam-deck-supported-games-anti-cheat-proton-eac-battleye-epic
-    validations:
-      required: true
