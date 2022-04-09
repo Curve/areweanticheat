@@ -19,5 +19,40 @@
         "addition": false,
         "native": true,
         "name": "ARK: Survival Evolved"
+    },
+    {
+        "addition": false,
+        "native": true,
+        "name": "ARK: Survival of the Fittest"
+    },
+    {
+        "addition": false,
+        "native": true,
+        "name": "Counter-Strike: Global Offensive"
+    },
+    {
+        "addition": false,
+        "native": true,
+        "name": "Counter-Strike: Source"
+    },
+    {
+        "addition": false,
+        "native": true,
+        "name": "Team Fortress 2"
+    },
+    {
+        "addition": false,
+        "native": true,
+        "name": "Dota 2"
+    },
+    {
+        "addition": false,
+        "native": true,
+        "name": "Left 4 Dead 2"
+    },
+    {
+        "addition": false,
+        "native": true,
+        "name": "Garry's Mod"
     }
 ]
