@@ -28,6 +28,7 @@ export interface Game {
     name: string;
     logo: string;
     status: Status;
+    native: boolean;
     reference: string;
     anticheats: string[];
 }

@@ -2,6 +2,7 @@ import { ActionIcon, Avatar, Group, Text, ThemeIcon, Tooltip } from "@mantine/co
 import { ArrowRight, ArrowsRightLeft, ExternalLink, Plus, Refresh } from "tabler-icons-react";
 import { Game } from "../Classes";
 import AntiCheatBadge from "./AntiCheatBadge";
+import NativeBadge from "./NativeBadge";
 import SupportBadge from "./SupportBadge";
 
 interface ChangeItemProps {
@@ -20,6 +21,7 @@ export default function ChangeItem({ changes: change }: ChangeItemProps) {
             </Group>
             <ArrowsRightLeft />
             <Group noWrap>
+                <NativeBadge native={old_game.native} />
                 <SupportBadge status={old_game.status} />
                 {old_game.reference ?
                     <ActionIcon component="a" target="_blank" href={old_game.reference}>
@@ -34,6 +36,7 @@ export default function ChangeItem({ changes: change }: ChangeItemProps) {
             </Group>
             <ArrowRight />
             <Group noWrap>
+                <NativeBadge native={new_game.native} />
                 <SupportBadge status={new_game.status} />
                 {new_game.reference ?
                     <ActionIcon component="a" target="_blank" href={new_game.reference}>
@@ -56,6 +59,7 @@ export default function ChangeItem({ changes: change }: ChangeItemProps) {
                 <Text>{change.name}</Text>
             </Group>
             <Group noWrap>
+                <NativeBadge native={change.native} />
                 <SupportBadge status={change.status} />
                 {change.reference ?
                     <ActionIcon component="a" target="_blank" href={change.reference}>

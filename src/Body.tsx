@@ -143,7 +143,9 @@ export default function Body() {
                         </tr>
                     </thead>
                     <tbody>
-                        {games.filter(element => element.name.toLowerCase().includes(searchFilter.toLowerCase())).map(element => <TableItem key={element.name} name={element.name} logo={element.logo} status={element.status} reference={element.reference} anticheats={element.anticheats} />
+                        {games.filter(element => element.name.toLowerCase().includes(searchFilter.toLowerCase())).map(
+                            element =>
+                                <TableItem key={element.name} name={element.name} logo={element.logo} status={element.status} reference={element.reference} anticheats={element.anticheats} native={element.native} />
                         )}
                     </tbody>
                 </Table>

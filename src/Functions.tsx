@@ -25,7 +25,7 @@ export async function fetchNewData(previousData: Game[]) {
     const results: Game[] = [];
 
     json.forEach((item: any) => {
-        const game: Game = { name: item.game as string, anticheats: (item.acList as string[]).map(item => stripUnicode(item)), status: remapStatus((item.acStatus as string).toLocaleLowerCase()), reference: item.acStatusUrl as string, logo: "" };
+        const game: Game = { name: item.game as string, anticheats: (item.acList as string[]).map(item => stripUnicode(item)), status: remapStatus((item.acStatus as string).toLocaleLowerCase()), reference: item.acStatusUrl as string, logo: "", native: false };
         results.push(game);
     });
 
@@ -87,7 +87,7 @@ export function fetchChanges(previous: Game[], current: Game[]) {
         for (const currentGame of current) {
             for (const oldGame of previous) {
                 if (currentGame.name == oldGame.name) {
-                    if (JSON.stringify(currentGame.anticheats) != JSON.stringify(oldGame.anticheats) || currentGame.status != oldGame.status || currentGame.reference != oldGame.reference) {
+                    if (JSON.stringify(currentGame.anticheats) != JSON.stringify(oldGame.anticheats) || currentGame.status != oldGame.status || currentGame.reference != oldGame.reference || (currentGame.native && !oldGame.native) || (typeof oldGame.native === "boolean" && currentGame.native != oldGame.native)) {
                         changes.push([oldGame, currentGame]);
                     }
                     continue outerLoop;

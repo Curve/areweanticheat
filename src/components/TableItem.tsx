@@ -2,6 +2,7 @@ import { ActionIcon, Avatar, createStyles, Group, Stack, Text, Tooltip } from "@
 import { ExternalLink } from "tabler-icons-react";
 import { Game, Status } from "../Classes";
 import AntiCheatBadge from "./AntiCheatBadge";
+import NativeBadge from "./NativeBadge";
 import SupportBadge from "./SupportBadge";
 
 const useStyle = createStyles((theme) => ({
@@ -14,7 +15,7 @@ const useStyle = createStyles((theme) => ({
 }));
 
 
-export default function TableItem({ name, logo, status, reference, anticheats }: Game) {
+export default function TableItem({ name, logo, status, reference, anticheats, native }: Game) {
     const { classes } = useStyle();
 
     const getText = (text: string) => {
@@ -52,6 +53,7 @@ export default function TableItem({ name, logo, status, reference, anticheats }:
         </td>
         <td>
             <Group>
+                <NativeBadge native={native} />
                 <SupportBadge status={status} />
                 {reference ?
                     <ActionIcon component="a" target="_blank" href={reference} className={classes.mobileShow}>
