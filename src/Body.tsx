@@ -1,4 +1,4 @@
-import { Accordion, Button, Divider, Group, Input, LoadingOverlay, Progress, RingProgress, Stack, Table, Text, useMantineTheme } from "@mantine/core";
+import { Accordion, Badge, Button, createStyles, Divider, Group, Input, LoadingOverlay, Progress, RingProgress, Stack, Table, Text, useMantineTheme } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { Check, ListDetails, RefreshAlert, Search } from "tabler-icons-react";
 import { Breakdown, Game, GameStats } from "./Classes";
@@ -23,7 +23,7 @@ export default function Body() {
     const [lastVisited, setLastVisited] = useState("");
     const [searchFilter, setSearchFilter] = useState("");
     const [breakdown, setBreakdown] = useState<Breakdown[]>([]);
-    const [changes, setChanges] = useState<Array<Array<Game>>>([]);
+    const [changes, setChanges] = useState<Array<Game | Game[]>>([]);
     const [gameStats, setGameStats] = useState<GameStats>(new GameStats());
 
     const searchChanged = (event: any) => {

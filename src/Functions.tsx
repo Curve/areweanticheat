@@ -38,7 +38,12 @@ export async function fetchNewData(previousData: Game[]) {
             for (const game of results) {
                 if (game.name == override.name) {
                     for (const [key, value] of Object.entries(override)) {
-                        (game as any)[key] = value;
+                        if (key == "rename") {
+                            game.name = value as string;
+                        }
+                        else {
+                            (game as any)[key] = value;
+                        }
                     }
                 }
             }
@@ -76,19 +81,19 @@ export async function fetchIcons(games: Game[]) {
 }
 
 export function fetchChanges(previous: Game[], current: Game[]) {
-    const changes: Array<Array<Game>> = [];
+    const changes: Array<Game | Game[]> = [];
     if (previous.length > 0) {
         outerLoop:
         for (const currentGame of current) {
             for (const oldGame of previous) {
                 if (currentGame.name == oldGame.name) {
-                    if (JSON.stringify(currentGame) != JSON.stringify(oldGame)) {
+                    if (JSON.stringify(currentGame.anticheats) != JSON.stringify(oldGame.anticheats) || currentGame.status != oldGame.status || currentGame.reference != oldGame.reference) {
                         changes.push([oldGame, currentGame]);
                     }
                     continue outerLoop;
                 }
             }
-            changes.push([currentGame]);
+            changes.push(currentGame);
         }
     }
 
