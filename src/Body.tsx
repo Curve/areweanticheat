@@ -80,11 +80,21 @@ export default function Body() {
                 { value: (gameStats.planned / gameStats.total) * 100, color: 'violet' },
             ] : []} />
         <Stack sx={{ marginLeft: 15 }}>
-            <Legend color={theme.colors.green[6]} name={`Supported (${gameStats.supported})`} />
-            <Legend color={theme.colors.violet[6]} name={`Planned (${gameStats.planned})`} />
-            <Legend color={theme.colors.cyan[6]} name={`Running (${gameStats.running})`} />
-            <Legend color={theme.colors.orange[6]} name={`Broken (${gameStats.broken})`} />
-            <Legend color={theme.colors.red[6]} name={`Denied (${gameStats.denied})`} />
+            <Tooltip withArrow label="Game is officially supported">
+                <Legend color={theme.colors.green[6]} name={`Supported (${gameStats.supported})`} />
+            </Tooltip>
+            <Tooltip withArrow label="Game is planned to be supported">
+                <Legend color={theme.colors.violet[6]} name={`Planned (${gameStats.planned})`} />
+            </Tooltip>
+            <Tooltip withArrow label="No official statement but runs fine (may required tinkering)">
+                <Legend color={theme.colors.cyan[6]} name={`Running (${gameStats.running})`} />
+            </Tooltip>
+            <Tooltip withArrow label="Game does not work (online)">
+                <Legend color={theme.colors.orange[6]} name={`Broken (${gameStats.broken})`} />
+            </Tooltip>
+            <Tooltip withArrow label="Linux support was explicitly denied">
+                <Legend color={theme.colors.red[6]} name={`Denied (${gameStats.denied})`} />
+            </Tooltip>
         </Stack>
     </Group><Stack sx={{ marginTop: 20 }}>
             <Group position="center">
