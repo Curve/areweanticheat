@@ -1,7 +1,7 @@
-import { Accordion, Badge, Button, createStyles, Divider, Group, Input, LoadingOverlay, Progress, RingProgress, Stack, Table, Text, useMantineTheme } from "@mantine/core";
+import { Accordion, Badge, Button, createStyles, Divider, Group, Input, LoadingOverlay, Progress, RingProgress, Stack, Table, Text, Tooltip, useMantineTheme } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { Check, ListDetails, RefreshAlert, Search } from "tabler-icons-react";
-import { Breakdown, Game, GameStats } from "./Classes";
+import { Breakdown, Game, GameStats, Status } from "./Classes";
 import ChangeItem from "./components/ChangeItem";
 import Legend from "./components/LegendInfo";
 import StyledAccordion from "./components/StyledAccordion";
@@ -141,7 +141,9 @@ export default function Body() {
                 </StyledAccordion>
             </Group>
             <Group position="center" sx={{ marginTop: 15 }}>
-                <Input icon={<Search />} variant="unstyled" placeholder="Search..." onChange={searchChanged} />
+                <Tooltip label="You can also search by Anti-Cheat or Supported-Status">
+                    <Input icon={<Search />} variant="unstyled" placeholder="Search..." onChange={searchChanged} />
+                </Tooltip>
             </Group>
             <Group position="center">
                 <Table sx={{ width: '80%' }} horizontalSpacing="xl" fontSize="md">
@@ -153,7 +155,7 @@ export default function Body() {
                         </tr>
                     </thead>
                     <tbody>
-                        {games.filter(element => element.name.toLowerCase().includes(searchFilter.toLowerCase())).map(
+                        {games.filter(element => (element.name.toLowerCase().includes(searchFilter.toLowerCase()) || Status[element.status].includes(searchFilter.toLowerCase()) || element.anticheats.filter(anticheat => anticheat.toLowerCase().includes(searchFilter)).length > 0)).map(
                             element =>
                                 <TableItem key={element.name} name={element.name} logo={element.logo} status={element.status} reference={element.reference} anticheats={element.anticheats} native={element.native} />
                         )}
