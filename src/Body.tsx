@@ -86,7 +86,7 @@ export default function Body() {
             <Tooltip withArrow label="Game is planned to be supported">
                 <Legend color={theme.colors.violet[6]} name={`Planned (${gameStats.planned})`} />
             </Tooltip>
-            <Tooltip withArrow label="No official statement but runs fine (may required tinkering)">
+            <Tooltip withArrow label="No official statement but runs fine (may require tinkering)">
                 <Legend color={theme.colors.cyan[6]} name={`Running (${gameStats.running})`} />
             </Tooltip>
             <Tooltip withArrow label="Game does not work (online)">
