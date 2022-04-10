@@ -63,8 +63,134 @@
     },
     {
         "addition": false,
+        "native": true,
+        "name": "7 Days to Die"
+    },
+    {
+        "addition": false,
+        "native": true,
+        "name": "Unturned"
+    },
+    {
+        "addition": false,
+        "native": true,
+        "name": "Splitgate"
+    },
+    {
+        "addition": false,
+        "native": true,
+        "name": "Dying Light"
+    },
+    {
+        "addition": false,
+        "native": true,
+        "name": "Albion Online"
+    },
+    {
+        "addition": false,
+        "native": true,
+        "name": "Half-Life 2: Deathmatch"
+    },
+    {
+        "addition": false,
+        "native": true,
+        "name": "Pirates, Vikings, and Knights II"
+    },
+    {
+        "addition": false,
+        "native": true,
+        "name": "Team Fortress Classic"
+    },
+    {
+        "addition": false,
+        "native": true,
+        "name": "Day of Defeat"
+    },
+    {
+        "addition": false,
+        "native": true,
+        "name": "Chivalry: Medieval Warfare"
+    },
+    {
+        "addition": false,
+        "native": true,
+        "name": "Insurgency"
+    },
+    {
+        "addition": false,
+        "native": true,
+        "name": "No More Room in Hell"
+    },
+    {
+        "addition": false,
+        "native": true,
+        "name": "Deathmatch Classic"
+    },
+    {
+        "addition": false,
+        "native": true,
+        "name": "Day of Defeat: Source"
+    },
+    {
+        "addition": false,
+        "native": true,
+        "name": "Killing Floor"
+    },
+    {
+        "addition": false,
+        "native": true,
+        "name": "Half-Life Deathmatch: Source"
+    },
+    {
+        "addition": false,
+        "native": true,
+        "name": "Day of Infamy"
+    },
+    {
+        "addition": false,
         "status": 2,
         "name": "Star Citizen",
         "reference": "https://github.com/starcitizen-lug/information-howtos/wiki/Quick-Start-Guide"
+    },
+    {
+        "addition": false,
+        "status": 2,
+        "name": "Tower Wars",
+        "reference": "https://www.protondb.com/app/214360"
+    },
+    {
+        "addition": false,
+        "status": 2,
+        "name": "Cry of Fear",
+        "reference": "https://www.protondb.com/app/223710#5ks8FLsQMa"
+    },
+    {
+        "addition": false,
+        "status": 2,
+        "name": "Lost Planet: Extreme Condition",
+        "reference": "https://www.protondb.com/app/6510"
+    },
+    {
+        "addition": false,
+        "status": 2,
+        "name": "Primal Carnage",
+        "reference": "https://www.protondb.com/app/321360#1lJ-g1OssC"
+    },
+    {
+        "addition": false,
+        "status": 2,
+        "name": "Call of Duty: WWII",
+        "reference": "https://www.protondb.com/app/476600#lIYwA6LTjM"
+    },
+    {
+        "addition": false,
+        "status": 2,
+        "name": "Homefront",
+        "reference": "https://www.protondb.com/app/55100#faXiLVSsUC"
+    },
+    {
+        "addition": false,
+        "native": true,
+        "name": "War Thunder"
     }
 ]
