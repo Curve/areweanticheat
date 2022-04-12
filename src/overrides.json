@@ -190,6 +190,18 @@
     },
     {
         "addition": false,
+        "status": 2,
+        "name": "Plants vs. Zombies: Battle for Neighborville",
+        "reference": "https://www.protondb.com/app/1262240#ZGsEq7x6Kb"
+    },
+    {
+        "addition": false,
+        "status": 3,
+        "name": "Deadside",
+        "reference": "https://steamcommunity.com/app/895400/discussions/3/3283695222735434723/"
+    },
+    {
+        "addition": false,
         "native": true,
         "name": "War Thunder"
     }
