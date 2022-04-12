@@ -218,5 +218,21 @@
         "native": false,
         "reference": "",
         "anticheats": ["Internal"]
+    },
+    {
+        "addition": true,
+        "name": "Friday The 13th: The Game",
+        "status": 0,
+        "native": false,
+        "reference": "",
+        "anticheats": ["Easy Anti-Cheat"]
+    },
+    {
+        "addition": true,
+        "name": "Grand Theft Auto Online",
+        "status": 2,
+        "native": false,
+        "reference": "",
+        "anticheats": ["Internal"]
     }
 ]
