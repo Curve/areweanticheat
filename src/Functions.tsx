@@ -25,7 +25,7 @@ export async function fetchNewData(previousData: Game[]) {
     const results: Game[] = [];
 
     json.forEach((item: any) => {
-        const game: Game = { name: item.game as string, anticheats: (item.acList as string[]).map(item => stripUnicode(item)), status: remapStatus((item.acStatus as string).toLocaleLowerCase()), reference: item.acStatusUrl as string, logo: "", native: false };
+        const game: Game = { name: item.game as string, anticheats: (item.acList as string[]).map(item => stripUnicode(item).trim()), status: remapStatus((item.acStatus as string).toLocaleLowerCase()), reference: item.acStatusUrl as string, logo: "", native: false };
         results.push(game);
     });
 
