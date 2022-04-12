@@ -204,5 +204,11 @@
         "addition": false,
         "native": true,
         "name": "War Thunder"
+    },
+    {
+        "addition": false,
+        "name": "SMITE",
+        "status": 2,
+        "reference": "https://www.protondb.com/app/386360"
     }
 ]
