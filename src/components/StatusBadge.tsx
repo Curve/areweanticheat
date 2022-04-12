@@ -3,11 +3,11 @@ import { Check, Clock, Minus, QuestionMark, ThumbUp, X } from "tabler-icons-reac
 import { Status } from "../Classes";
 
 
-interface SupportBadgeProps {
+interface StatusBadgeProps {
     status: Status;
 }
 
-export default function SupportBadge({ status }: SupportBadgeProps) {
+export default function StatusBadge({ status }: StatusBadgeProps) {
     switch (status) {
         case Status.denied:
             return <ThemeIcon color="red" radius="xl"><X size={18} /></ThemeIcon>

@@ -3,7 +3,7 @@ import { ExternalLink } from "tabler-icons-react";
 import { Game, Status } from "../Classes";
 import AntiCheatBadge from "./AntiCheatBadge";
 import NativeBadge from "./NativeBadge";
-import SupportBadge from "./SupportBadge";
+import SupportBadge from "./StatusBadge";
 
 const useStyle = createStyles((theme) => ({
     mobileHide: {
