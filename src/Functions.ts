@@ -1,7 +1,7 @@
 import { Breakdown, Game, GameStats, Status } from "./Classes";
 import Overrides from './overrides.json';
 
-export function remapStatus(status: string) {
+function remapStatus(status: string) {
     if (status.includes("unconfirmed")) {
         return Status.broken;
     } else if (status.includes("confirmed")) {
@@ -15,7 +15,7 @@ export function remapStatus(status: string) {
     }
 };
 
-export function stripUnicode(anticheat: string) {
+function stripUnicode(anticheat: string) {
     return anticheat.replace(/[^\x00-\x7F]/g, "");
 }
 
