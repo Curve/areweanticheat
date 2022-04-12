@@ -210,5 +210,13 @@
         "name": "SMITE",
         "status": 2,
         "reference": "https://www.protondb.com/app/386360"
+    },
+    {
+        "addition": true,
+        "name": "Warframe",
+        "status": 3,
+        "native": false,
+        "reference": "",
+        "anticheats": ["Internal"]
     }
 ]
