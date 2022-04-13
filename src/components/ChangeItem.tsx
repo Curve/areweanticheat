@@ -25,7 +25,7 @@ export default function ChangeItem({ changes: change }: ChangeItemProps) {
                     <Avatar radius="xl" src={old_game.logo} />
                     <Text>{old_game.name}</Text>
                 </Group>
-                <Group sx={{ marginLeft: 50 }}>
+                <Group position="center">
                     <Stack>
 
                         {did_status_change ?
