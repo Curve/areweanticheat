@@ -110,7 +110,7 @@ export default function Body() {
                         <Accordion.Item label="Changes since you've last checked">
                             <Stack>
                                 <Group position="center">
-                                    <Stack>
+                                    <Stack spacing="lg">
                                         {changes.map((change, index) => <ChangeItem key={index} changes={change} />)}
                                     </Stack>
                                 </Group>

@@ -18,7 +18,7 @@ export default function ChangeItem({ changes: change }: ChangeItemProps) {
         const did_reference_change = old_game.reference != new_game.reference;
         const did_anticheats_change = JSON.stringify(old_game.anticheats) != JSON.stringify(new_game.anticheats);
 
-        return <Group>
+        return <Group position="center">
             <Stack>
                 <Group noWrap>
                     <ThemeIcon color="violet" radius="xl"><Refresh /></ThemeIcon>
@@ -109,26 +109,41 @@ export default function ChangeItem({ changes: change }: ChangeItemProps) {
         </Group>
     }
     else {
-        return <Group>
-            <Group noWrap>
-                <ThemeIcon color="green" radius="xl"><Plus /></ThemeIcon>
-                <Avatar radius="xl" src={change.logo} />
-                <Text>{change.name}</Text>
-            </Group>
-            <Group noWrap>
-                <NativeBadge native={change.native} />
-                <StatusBadge status={change.status} />
-                {change.reference ?
-                    <ActionIcon component="a" target="_blank" href={change.reference}>
-                        <ExternalLink />
-                    </ActionIcon>
-                    : undefined}
-                {change.anticheats.map(anticheat => {
-                    return <Tooltip withArrow label={anticheat} key={anticheat}>
-                        <AntiCheatBadge key={anticheat} anticheat={anticheat} />
-                    </Tooltip>;
-                })}
-            </Group>
+        return <Group position="center">
+            <Stack>
+                <Group noWrap>
+                    <ThemeIcon color="green" radius="xl"><Plus /></ThemeIcon>
+                    <Avatar radius="xl" src={change.logo} />
+                    <Text>{change.name}</Text>
+                </Group>
+                <Group sx={{ marginLeft: 50 }}>
+                    <Stack>
+                        <Group>
+                            <ArrowRight />
+                            <StatusBadge status={change.status} />
+                            {change.native ?
+                                <>
+                                    ,
+                                    <Plus />
+                                    <NativeBadge native={true} />
+                                </>
+                                :
+                                undefined
+                            }
+                            ,
+                            <ActionIcon component="a" target="_blank" href={change.reference}>
+                                <ExternalLink />
+                            </ActionIcon>
+                            ,
+                            {change.anticheats.map(anticheat => {
+                                return <Tooltip withArrow label={anticheat} key={anticheat}>
+                                    <AntiCheatBadge key={anticheat} anticheat={anticheat} />
+                                </Tooltip>;
+                            })}
+                        </Group>
+                    </Stack>
+                </Group>
+            </Stack>
         </Group>
     }
 }
