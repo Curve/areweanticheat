@@ -234,5 +234,11 @@
         "native": false,
         "reference": "",
         "anticheats": ["Internal"]
+    },
+    {
+        "addition": false,
+        "name": "Back 4 Blood",
+        "status": 3,
+        "reference": "https://back4blood.com/en-us/patch-notes/april-2022-update"
     }
 ]
