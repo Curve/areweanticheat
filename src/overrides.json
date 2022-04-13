@@ -240,5 +240,11 @@
         "name": "Back 4 Blood",
         "status": 3,
         "reference": "https://back4blood.com/en-us/patch-notes/april-2022-update"
+    },
+    {
+        "addition": false,
+        "name": "Halo: The Master Chief Collection",
+        "status": 4,
+        "reference": "https://www.xda-developers.com/halo-mcc-broken-steam-deck/"
     }
 ]
