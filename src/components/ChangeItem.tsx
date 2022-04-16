@@ -123,18 +123,20 @@ export default function ChangeItem({ changes: change }: ChangeItemProps) {
                             <StatusBadge status={change.status} />
                             {change.native ?
                                 <>
-                                    ,
                                     <Plus />
                                     <NativeBadge native={true} />
                                 </>
                                 :
                                 undefined
                             }
-                            ,
-                            <ActionIcon component="a" target="_blank" href={change.reference}>
-                                <ExternalLink />
-                            </ActionIcon>
-                            ,
+                            {change.reference ?
+                                <>
+                                    <ActionIcon component="a" target="_blank" href={change.reference}>
+                                        <ExternalLink />
+                                    </ActionIcon>
+                                </>
+                                : undefined
+                            }
                             {change.anticheats.map(anticheat => {
                                 return <Tooltip withArrow label={anticheat} key={anticheat}>
                                     <AntiCheatBadge key={anticheat} anticheat={anticheat} />
@@ -143,7 +145,7 @@ export default function ChangeItem({ changes: change }: ChangeItemProps) {
                         </Group>
                     </Stack>
                 </Group>
-            </Stack>
-        </Group>
+            </Stack >
+        </Group >
     }
 }
