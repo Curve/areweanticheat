@@ -29,24 +29,28 @@ export async function fetchNewData(previousData: Game[]) {
         results.push(game);
     });
 
+    outerLoop:
     for (const _override of Overrides) {
         const override = _override as any;
-        if (override.addition) {
-            results.push(override as unknown as Game);
-        }
-        else {
-            for (const game of results) {
-                if (game.name == override.name) {
-                    for (const [key, value] of Object.entries(override)) {
-                        if (key == "rename") {
-                            game.name = value as string;
-                        }
-                        else {
-                            (game as any)[key] = value;
-                        }
+        for (const game of results) {
+            if (game.name == override.name) {
+                for (const [key, value] of Object.entries(override)) {
+                    if (key == "rename") {
+                        game.name = value as string;
+                    }
+                    else {
+                        (game as any)[key] = value;
                     }
                 }
+                if (override.addition)
+                {
+                    continue outerLoop;
+                }
             }
+        }
+
+        if (override.addition) {
+            results.push(override as unknown as Game);
         }
     }
 
