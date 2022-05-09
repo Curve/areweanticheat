@@ -251,15 +251,29 @@
         "addition": false,
         "name": "Far Cry 5",
         "status": 2,
-        "reference": "https://steamdb.info/depot/552521/history/?changeid=M:7117179758041625493"
+        "reference": "https://steamdb.info/depot/552521/history/?changeid=M:7117179758041625493",
+        "anticheats": []
+    },
+    {
+        "addition": false,
+        "name": "Rogue Company",
+        "status": 3,
+        "reference": "https://github.com/Starz0r/AreWeAntiCheatYet/issues/444"
     },
     {
         "addition": true,
-        "name": "Rogue Company",
+        "name": "Forza Horizon 4",
         "status": 3,
         "native": false,
-        "reference": "https://github.com/Starz0r/AreWeAntiCheatYet/issues/444",
-        "anticheats": ["Easy Anti-Cheat"]
+        "reference": "https://www.protondb.com/app/1293830",
+        "anticheats": ["Internal"]
     },
+    {
+        "addition": true,
+        "name": "Forza Horizon 5",
+        "status": 3,
+        "native": false,
+        "reference": "https://www.protondb.com/app/1551360",
+        "anticheats": ["Internal"]
     }
 ]
