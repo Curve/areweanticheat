@@ -253,5 +253,13 @@
         "status": 2,
         "reference": "https://steamdb.info/depot/552521/history/?changeid=M:7117179758041625493"
     },
+    {
+        "addition": true,
+        "name": "Rogue Company",
+        "status": 3,
+        "native": false,
+        "reference": "https://github.com/Starz0r/AreWeAntiCheatYet/issues/444",
+        "anticheats": ["Easy Anti-Cheat"]
+    },
     }
 ]
