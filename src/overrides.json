@@ -246,5 +246,12 @@
         "name": "Halo: The Master Chief Collection",
         "status": 4,
         "reference": "https://www.xda-developers.com/halo-mcc-broken-steam-deck/"
+    },
+    {
+        "addition": false,
+        "name": "Far Cry 5",
+        "status": 2,
+        "reference": "https://steamdb.info/depot/552521/history/?changeid=M:7117179758041625493"
+    },
     }
 ]
