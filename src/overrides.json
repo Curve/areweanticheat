@@ -275,5 +275,15 @@
         "native": false,
         "reference": "https://www.protondb.com/app/1551360",
         "anticheats": ["Internal"]
+    },
+    {
+        "addition": false,
+        "name": "Black Desert",
+        "rename": "Black Desert Online"
+    },
+    {
+        "addition": false,
+        "name": "Rainbow Six: Siege",
+        "reference": "https://www.gamingonlinux.com/2021/11/ubisoft-proton-support-rainbow-six-siege-linux/"
     }
 ]
