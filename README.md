@@ -1,3 +1,6 @@
+This has been merged into mainline https://github.com/Starz0r/AreWeAntiCheatYet/pull/456
+
+<del>
 # Are We Anti-Cheat?
 
 An alternative frontend for [areweanticheatyet.com](https://areweanticheatyet.com/).
@@ -19,3 +22,5 @@ This project also maintains it's own overrides list which is used to add an addi
 
 - Changes List
     ![Changes List](assets/changes.png)
+    
+</del>
