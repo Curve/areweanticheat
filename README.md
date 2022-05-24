@@ -1,4 +1,4 @@
-This has been merged into mainline https://github.com/Starz0r/AreWeAntiCheatYet/pull/456
+# ⚠️ This has been merged into mainline https://github.com/Starz0r/AreWeAntiCheatYet/pull/456 ⚠️
 
 <del>
 # Are We Anti-Cheat?
